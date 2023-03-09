@@ -1,0 +1,17 @@
+{
+"product":{
+    "Label":"product",
+    "Painting":"P",
+    "Custom Painting":"CP",
+    "Photo":"PH"},
+"material":{
+    "Label":"material",
+    "Canvas":"C",
+    "Framed Print":"FP",
+    "Poster":"P"},
+"size":{
+    "Label":"size",
+    "Small":"S",
+    "Medium":"M",
+    "Large":"L"}
+}

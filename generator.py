@@ -1,4 +1,4 @@
-import sys
+import sys, json
 
 def printTitle():
     title = '''
@@ -11,6 +11,14 @@ def printTitle():
     '''
     print(title)
     return
+
+def save_json(data, filename):
+    with open(filename, "w") as outfile:
+        json.dump(data, outfile)
+
+def load_json(filename):
+    with open (filename, "r") as infile:
+        return json.load(infile)
 
 def encodeValue(dictionary, value):
     return dictionary[value] + "-"
@@ -72,23 +80,6 @@ def launchMenu(listing_data):
     print('\n' + str(input_data) + " --> " + sku_code)
     return
 
-product = {
-            "Label":"product",
-            "Painting":"P",
-            "Custom Painting":"CP",
-            "Photo":"PH"}
-material = {
-            "Label":"material",
-            "Canvas":"C",
-            "Framed Print":"FP",
-            "Poster":"P"}
-size = {
-            "Label":"size",
-            "Small":"S",
-            "Medium":"M",
-            "Large":"L"
-}
 
-
-listing_data = [product, material, size]
+listing_data = list(load_json("product_info.json").values())
 launchMenu(listing_data)
